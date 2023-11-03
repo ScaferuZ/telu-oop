@@ -16,6 +16,10 @@ public class Database {
     public MahasiswaTbl mahasiswaTbl = new MahasiswaTbl(this);
     public ProdiTbl prodiTbl = new ProdiTbl(this);
 
+    public DBTables getTables() {
+        return tables;
+    }
+
     public Database() {
         gson = new Gson();
         readDBFile();

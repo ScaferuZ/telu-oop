@@ -29,6 +29,7 @@ public class KampusApp {
         System.out.println("5 -> Tambah Data Prodi");
         System.out.println("6 -> Ubah Data Prodi");
         System.out.println("7 -> Hapus Data Prodi");
+        System.out.println("8 -> Tampilkan Semua Data Mahasiswa");
         System.out.println("0 -> Keluar Aplikasi");
         System.out.print("Silahkan masukan menu yang dipilih: ");
         int menuYangDipilih = scanner.nextInt();
@@ -55,6 +56,8 @@ public class KampusApp {
             case 7:
                 menuHapusProdi();
                 break;
+            case 8:
+                menuTampilkanMahasiswa();
             default: {
                 System.out.print("* Terimakasih sudah menggunakan Aplikasi Kampus *");
                 System.exit(0);
@@ -132,7 +135,7 @@ public class KampusApp {
         System.out.print("Masukan NIM: ");
         String nim = scanner.nextLine();
         db.mahasiswaTbl.delete(nim);
-        System.out.println("Tekan Enter untuk melanjutkan...");
+        System.out.println("Mahasiswa dengan nim " + nim + " berhasil dihapus");
         scanner.nextLine();
         showMenu();
     }
@@ -176,5 +179,18 @@ public class KampusApp {
         scanner.nextLine();
         showMenu();
 
+    }
+
+    public void menuTampilkanMahasiswa() {
+        System.out.println("----- Menu Tampilkan Semua Data Mahasiswa -----");
+        for (Mahasiswa mahasiswa : db.getTables().dataMahasiswa) {
+            System.out.println("* NIM: " + mahasiswa.getNim() + " *");
+            System.out.println("* Nama: " + mahasiswa.getNama() + " *");
+            System.out.println("* Prodi: " + db.prodiTbl.getProdiById(mahasiswa.getIdProdi()).getNamaProdi() + " *");
+            System.out.println("---------------------------------");
+        }
+        System.out.println("Tekan Enter untuk melanjutkan...");
+        scanner.nextLine();
+        showMenu();
     }
 }

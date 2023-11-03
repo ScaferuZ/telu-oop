@@ -1,1 +1,1 @@
-{"dataMahasiswa":[{"nim":"123","nama":"Rafinno Aulya"},{"nim":"1202220171","nama":"Endra Lazuardi","idProdi":"SISFOR"}],"dataProdi":[{"idProdi":"SISFOR","namaProdi":"Sistem Informasi"}]}
+{"dataMahasiswa":[{"nim":"1202220171","nama":"Endra Lazuardi","idProdi":"SISFOR"},{"nim":"1202220123","nama":"Budi Gaming","idProdi":"TE"}],"dataProdi":[{"idProdi":"SISFOR","namaProdi":"Sistem Informasi"},{"idProdi":"TE","namaProdi":"Teknik Elektro"}]}
