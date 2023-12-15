@@ -1,4 +1,4 @@
-package todo;
+package model.todo;
 
 public class College extends Todo {
     private String course;

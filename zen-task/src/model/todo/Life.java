@@ -1,4 +1,4 @@
-package todo;
+package model.todo;
 
 public class Life extends Todo{
     private String dueDate;

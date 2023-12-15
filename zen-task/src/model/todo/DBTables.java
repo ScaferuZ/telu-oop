@@ -1,7 +1,7 @@
-package todo;
+package model.todo;
 
 import java.util.ArrayList;
 
-public class TodoTable {
+public class DBTables {
     public ArrayList<Todo> todos = new ArrayList<Todo>();
 }

@@ -1,4 +1,4 @@
-package todo;
+package model.todo;
 
 public abstract class Todo {
     private String task;
