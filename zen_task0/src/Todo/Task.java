@@ -8,16 +8,27 @@ public class Task {
   private String status;
   private String projectName;
 
-  public Task(
-      int id, String title, String tags, String description, String status, String projectName) {
-    this.id = id;
-    this.title = title;
-    this.tags = tags;
-    this.description = description;
-    this.status = status;
-    this.projectName = projectName;
-  }
+  // public Task(
+  //     int id, String title, String tags, String description, String status, String projectName) {
+  //   this.id = id;
+  //   this.title = title;
+  //   this.tags = tags;
+  //   this.description = description;
+  //   this.status = status;
+  //   this.projectName = projectName;
+  // }
 
+  public static Task buildTask(int id, String title, String tags, String description, String status,
+      String projectName) {
+    Task task = new Task();
+    task.setId(id);
+    task.setTitle(title);
+    task.setTags(tags);
+    task.setDescription(description);
+    task.setStatus(status);
+    task.setProjectName(projectName);
+    return task;
+  }
   public int getId() {
     return id;
   }
