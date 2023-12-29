@@ -9,6 +9,7 @@ public class ZenTask {
 
   public void showOptions() {
     System.out.println("= 1. Add Task =");
+    System.out.println("= 2. Display Tasks =");
   }
 
   public int readInput() {
@@ -27,7 +28,7 @@ public class ZenTask {
 
       } catch (Exception e) {
         // TODO: handle exception
-        System.out.println("Input mustb be a number!");
+        System.out.println("Input must be a number!");
       }
     }
   }
@@ -37,17 +38,28 @@ public class ZenTask {
       case 1:
         AddTask addTask = new AddTask();
         addTask.showInformation();
-        String taskName = addTask.userInput();
-        if (!taskName.equals("0")) {
-          addTask.execute(taskName);
+        String command= addTask.userInput();
+        if (!command.equals("0")) {
+          addTask.execute(command);
         }
         break;
+      case 2:
+        if (tasks.size() > 0) {
+          DisplayTasks displayTasks = new DisplayTasks();
+          displayTasks.showInformation();
+          displayTasks.execute(null);
+        } else {
+          System.out.println("No task found! Please enter a task!");
+        }
     }
   }
 
   public void start() {
     // TODO: Add welcome message
     while (isRunning) {
+      System.out.println("=----------------=");
+      System.out.println("= Welcome to ZenTask =");
+      System.out.println("");
       showOptions();
       int option = readInput();
       executeAction(option);
