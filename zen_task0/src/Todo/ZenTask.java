@@ -37,6 +37,7 @@ public class ZenTask {
         System.out.println("Input must be a number!");
       }
     }
+    in.close();
   }
 
   public void executeAction(int option) {
@@ -107,17 +108,14 @@ public class ZenTask {
         }
         break;
       case 7:
-        if (tasks.size() > 0) {
-          ReadFromFile readTask = new ReadFromFile();
-          readTask.showInformation();
-          String read = readTask.userInput();
-          if (!read.equals("0")) {
-            readTask.execute(read);
-          }
-        } else {
-          System.out.println("No task found! Please enter a task!");
+        ReadFromFile readTask = new ReadFromFile();
+        readTask.showInformation();
+        String read = readTask.userInput();
+        if (!read.equals("0")) {
+          readTask.execute(read);
         }
         break;
+
       case 8:
         isRunning = false;
         break;
@@ -125,7 +123,6 @@ public class ZenTask {
   }
 
   public void start() {
-    // TODO: Add welcome message
     while (isRunning) {
       System.out.println("=----------------=");
       System.out.println("= Welcome to ZenTask =");

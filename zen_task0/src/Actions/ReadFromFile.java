@@ -26,6 +26,7 @@ public class ReadFromFile extends Action {
 
       return userInput;
     }
+    in.close();
   }
 
   @Override
@@ -35,9 +36,6 @@ public class ReadFromFile extends Action {
       while (scanner.hasNextLine()) {
         String file = scanner.nextLine();
         String[] parts = file.split(",");
-        // Task task = Task.buildTask(parts[0], parts[1], DateSorting.parseDate("dd-MM-yyyy",
-        // parts[2]),
-        //         parts[3], parts[4]);
         Task task = Task.buildTask(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
         if (ZenTask.tasks.get(parts[0]) != null) {
           ZenTask.tasks.replace(parts[0], task);
@@ -46,7 +44,7 @@ public class ReadFromFile extends Action {
         }
       }
       scanner.close();
-      System.out.println("Tasks are being read!");
+      System.out.println("Data are being used!");
     } catch (FileNotFoundException e) {
       System.out.println("Path or file do not exist...");
     }
