@@ -9,7 +9,7 @@ public class AddTask extends Action {
     System.out.println("=----------------=");
     System.out.println("= - Add New Task - =");
     System.out.println("= Please add your new task with the format below separated by | =");
-    System.out.println("= ID | Title | Tags | Description | Status | Project =");
+    System.out.println("= ID|Title|Tags|Description|Status|Project =");
     System.out.println("= Type 0 to return =");
     System.out.println("=----------------=");
   }
@@ -45,7 +45,6 @@ public class AddTask extends Action {
     Task task = Task.buildTask(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
     ZenTask.tasks.put(parts[0], task);
     System.out.println("Task successfully added!");
-      
     System.out.println("");
   }
 }
