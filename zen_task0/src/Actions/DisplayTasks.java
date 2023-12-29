@@ -26,6 +26,5 @@ public class DisplayTasks extends Action {
       System.out.println("Project: " + value.getProjectName());
       System.out.println("");
     });
-      
   }
 }
