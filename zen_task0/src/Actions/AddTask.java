@@ -9,8 +9,8 @@ public class AddTask extends Action {
     System.out.println("=----------------=");
     System.out.println("= - Add New Task - =");
     System.out.println("= Please add your new task with the format below separated by | =");
-    System.out.println("= ID | Name | Description | Status | Project =");
-    System.out.println("= Type 0 to add new task =");
+    System.out.println("= ID | Title | Tags | Description | Status | Project =");
+    System.out.println("= Type 0 to return =");
     System.out.println("=----------------=");
   }
 
