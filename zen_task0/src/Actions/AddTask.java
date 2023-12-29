@@ -17,21 +17,21 @@ public class AddTask extends Action {
   @Override
   public String userInput() {
     while (true) {
-      System.out.println("=----------------=");
+      System.out.println("");
       System.out.println("= Please enter your new task =");
       Scanner in = new Scanner(System.in);
       String userInput = in.nextLine();
 
       if (!userInput.equals("0")) {
         String[] parts = userInput.split("\\|");
-        if (parts.length == 5) {
+        if (parts.length == 6) {
           if (ZenTask.tasks.get(parts[0]) == null) {
             return userInput;
           } else {
-            System.out.print("Taks with the ID entered is already exist!");
+            System.out.println("Taks with the ID entered is already exist!");
           }
         } else {
-          System.out.print("Please make sure you entered the task correctly!");
+          System.out.println("Please make sure you entered the task correctly!");
         }
       } else {
         return userInput;
@@ -46,5 +46,6 @@ public class AddTask extends Action {
     ZenTask.tasks.put(parts[0], task);
     System.out.println("Task successfully added!");
       
+    System.out.println("");
   }
 }
